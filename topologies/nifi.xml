@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--==============================================-->
+<!-- DO NOT EDIT. This is an auto-generated file. -->
+<!--==============================================-->
+<topology>
+    <generated>true</generated>
+    <gateway>
+        <provider>
+            <role>authentication</role>
+            <name>Anonymous</name>
+            <enabled>true</enabled>
+        </provider>
+    </gateway>
+
+    <service>
+        <role>NIFI</role>
+        <url>http://nifi:8080</url>
+        <param>
+            <name>useTwoWaySsl</name>
+            <value>false</value>
+        </param>
+    </service>
+</topology>

@@ -1,0 +1,35 @@
+#
+# to use this, run `docker-compose up` in the directory holding this gist.
+# or wget/curl the file and pipe it it into `docker-compose up`
+#
+
+version: "3.5"
+
+services:
+
+  traefik:
+    image: traefik # The official Traefik docker image
+    command: --api --docker # Enables the web UI and tells Traefik to listen to docker
+    ports:
+      - "80:80"     # The HTTP port
+      - "8080:8080" # The Web UI (enabled by --api)
+    networks:
+      - knox-dev-docker_default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+
+  nifi:
+    image: apache/nifi:1.9.0-SNAPSHOT-dockermaven
+    ports:
+      - "9090:8080" # UI
+      - "10000" # Site-to-Site Input Port
+    environment:
+      - NIFI_WEB_PROXY_CONTEXT_PATH=/traefik/,/gateway/nifi/nifi-app/
+    networks:
+      - knox-dev-docker_default
+    labels:
+      traefik.frontend.rule: "Host:nifi.docker.localhost;PathPrefixStrip:/traefik/"
+
+networks:
+  knox-dev-docker_default:
+    external: true
