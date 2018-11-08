@@ -2,7 +2,8 @@
 An example of several proxies in front of Apache NiFi, all running in docker containers.
 
 # Build the NiFi dockermaven image
-1. `mvn clean install -Pdocker,contrib-check`
+1. `mvn clean install -Pcontrib-check`
+1. `mvn install -pl nifi-docker/dockermaven/pom.xml -Pdocker`  
 1. `docker images`  
   Confirm the NiFi 1.9.0-SNAPSHOT docker image exists:
     ```
