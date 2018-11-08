@@ -1,6 +1,15 @@
 # proxy-nifi-docker
 An example of several proxies in front of Apache NiFi, all running in docker containers.
 
+# Build the NiFi dockermaven image
+1. `mvn clean install -Pdocker,contrib-check`
+1. `docker images`  
+  Confirm the NiFi 1.9.0-SNAPSHOT docker image exists:
+    ```
+    $ docker images
+    REPOSITORY             TAG                          IMAGE ID            CREATED             SIZE
+    apache/nifi            1.9.0-SNAPSHOT-dockermaven   119e30c23439        5 minutes ago       1.82GB
+    ```
 # Starting the containers
 - `./scripts/start.sh`
 
