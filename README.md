@@ -14,6 +14,9 @@ An example of several proxies in front of Apache NiFi, all running in docker con
 # Starting the containers
 - `./scripts/start.sh`
 
+# Watching the NiFi logs
+- `docker-compose -f docker-compose-anonymous-nifi.yaml logs -f`
+
 # Accessing NiFi
 - NiFi is available
   - on the host at: `http://localhost:9090/nifi/`
