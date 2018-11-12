@@ -22,26 +22,26 @@ _Note: Please use Chrome when testing the proxies.  Hostnames are in the .localh
 
 # Accessing NiFi
 - NiFi is available
-  - on the host at: `http://localhost:9090/nifi/`
-  - through Traefik at: `http://nifi.docker.localhost/traefik/nifi/`
-  - through Knox at: `https://localhost:8443/gateway/nifi/nifi-app/nifi/`
-  - through Nginx at: `http://nginx.docker.localhost:8081/nifi/`
+  - on the host at: http://localhost:9090/nifi/
+  - through Traefik at: http://nifi.docker.localhost/traefik/nifi/
+  - through Knox at: https://localhost:8443/gateway/nifi/nifi-app/nifi/
+  - through Nginx at: http://nginx.docker.localhost:8081/nifi/
 
 # Verifying proxy functionality
 1. Go to url: http://nifi.docker.localhost/traefik/nifi/  
-  Traefik uses the X-Forwarded-Host/X-Forwarded-Prefix:
+  Traefik uses X-Forwarded-Host/X-Forwarded-Prefix:
     1. Add several processors and connect them
     1. Verify that the processors can be moved on the canvas
     1. Open the processor configuration for any of the processors
     1. View Usage for any of the processors on the canvas
 1. Go to url: https://localhost:8443/gateway/nifi/nifi-app/nifi  
-  Knox uses the X-Forwarded-Host/X-Forwarded-Context:
+  Knox uses X-Forwarded-Host/X-Forwarded-Context:
     1. Add several processors and connect them
     1. Verify that the processors can be moved on the canvas
     1. Open the processor configuration for any of the processors
     1. View Usage for any of the processors on the canvas
 1. Go to url: http://nginx.docker.localhost:8081/nifi/  
-  Nginx is configured to use the X-ProxyHost/X-ProxyContextPath:
+  Nginx is configured to use X-ProxyHost/X-ProxyContextPath:
     1. Add several processors and connect them
     1. Verify that the processors can be moved on the canvas
     1. Open the processor configuration for any of the processors
