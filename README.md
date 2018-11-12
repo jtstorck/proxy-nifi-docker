@@ -48,5 +48,4 @@ _Note: Please use Chrome when testing the proxies.  Hostnames are in the .localh
     1. View Usage for any of the processors on the canvas
 
 # Stopping the containers
-1. `docker-compose -f docker-compose-anonymous-nifi.yaml down`
-1. `docker-compose -f knox-dev-docker/docker-compose.yml down`
+- `./scripts/stop.sh`
