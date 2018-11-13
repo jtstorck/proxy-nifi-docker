@@ -1,8 +1,6 @@
 # proxy-nifi-docker
 An example of several proxies in front of Apache NiFi, all running in docker containers.
 
-_Note: Please use Chrome when testing the proxies.  Hostnames are in the .localhost domain which is handled explicitly by Chrome._
-
 # Build the NiFi dockermaven image
 From the clone of the Apache NiFi repository, on the appropriate branch:
 1. `mvn clean install -Pcontrib-check`
