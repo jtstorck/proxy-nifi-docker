@@ -4,7 +4,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPO_DIR=$SCRIPT_DIR/..
 
-# clone Snadeep's repo, which creates docker containers to compile Knox,
+# clone Sandeep's repo, which creates docker containers to compile Knox,
 # start an LDAP, and start Knox
 git clone https://github.com/moresandeep/knox-dev-docker.git $REPO_DIR/knox-dev-docker
 
